@@ -1,11 +1,31 @@
-<script setup>
+<script>
+export default{
+  data(){
+
+  }
+  components:{
+    AppHeader,
+    AppMain,
+    AppFooter,
+  }
+}
+
+import AppFooter from './components/AppFooter.vue';
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 
 </script>
 
 <template>
 
+<AppHeader/>
+<AppMain/>
+<AppFooter/>
+
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
+@use './style/general.scss';
+@use './style/partials/mixins';
+@use './style/partials/variable';
 </style>
