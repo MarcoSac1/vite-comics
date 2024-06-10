@@ -125,7 +125,8 @@
                     font-weight: 600;
                     text-transform: uppercase;
                     &.active{
-                        background-color: $active-link-bg;
+                        color: $active-link-bg;
+                        border-bottom: 4px  solid $active-link-bg;
                     }
                 }
         }
