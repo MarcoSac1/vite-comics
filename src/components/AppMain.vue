@@ -10,7 +10,9 @@
 
 <template>
 <main>
-    <p> --> Contents goes here <-- </p>
+    <section class="text">
+        <p>--> Contents goes here <-- </p>
+    </section>
 </main>
 </template>
 
@@ -19,6 +21,16 @@
     
     main {
         background-color: $dark-main-bg;
+        color: white;
+        padding: 4rem;
+        font-size: 1.5rem;
+            
+        .text{
+            width: 1200px;
+            margin: 0 auto;
+        }
+            
     }
+
 
 </style>

@@ -71,20 +71,21 @@
 
 <template>
 <header>
-    
-    <section  class="logo">
-        <img src="../assets/img/dc-logo.png" alt="DC-main-logo" >
-    </section>
-    <section class="navbar">
-        <nav>
-            <ul>
-                <li v-for="link in headerLinks"  :key="link.id" class="(link.active) ? 'active' ''">
-                    <a :href="link.url">
-                        {{ link.title }}
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <section class="container">
+        <section  class="logo">
+            <img src="../assets/img/dc-logo.png" alt="DC-main-logo" >
+        </section>
+        <section class="navbar">
+            <nav>
+                <ul>
+                    <li v-for="link in headerLinks"  :key="link.id" :class="(link.active) ? 'active' : ''">
+                        <a :href="link.url">
+                            {{ link.title }}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
     </section>
 </header>
 </template>
@@ -92,12 +93,13 @@
 <style lang="scss" scoped>
 @use '../style/partials/variable.scss' as *;
 
-    header{
+    .container{
+        width: 1200px;
+        margin: 0 auto;
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 1rem;
-        margin-bottom: 4rem;
+        padding: 1rem 0rem;
     }
 
     img{
