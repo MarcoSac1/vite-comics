@@ -1,18 +1,14 @@
 <script>
-export default{
-  data(){
+  export default {
+    data(){
 
+    },
+    components:{
+      AppHeader,
+      AppMain,
+      AppFooter
+    }
   }
-  components:{
-    AppHeader,
-    AppMain,
-    AppFooter,
-  }
-}
-
-import AppFooter from './components/AppFooter.vue';
-import AppHeader from './components/AppHeader.vue';
-import AppMain from './components/AppMain.vue';
 
 </script>
 
