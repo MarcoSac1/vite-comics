@@ -9,11 +9,16 @@
 </script>
 
 <template>
-<header>
-    <h1> main </h1>
-</header>
+<main>
+    <p> --> Contents goes here <-- </p>
+</main>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+    @use '../style/partials/variable' as *;
+    
+    main {
+        background-color: $dark-main-bg;
+    }
 
 </style>
