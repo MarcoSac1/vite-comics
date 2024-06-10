@@ -23,8 +23,10 @@
 
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 @use './style/general.scss';
-@use './style/partials/mixins';
-@use './style/partials/variable';
+@use './style/partials/mixins' as *;
+@use './style/partials/variable' as *;
+
+
 </style>
