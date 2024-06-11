@@ -1,4 +1,5 @@
 <script>
+import listProducts from './listProduct.vue';
     export default{
         data(){
             return{
