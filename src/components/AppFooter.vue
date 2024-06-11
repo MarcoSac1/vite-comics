@@ -153,27 +153,27 @@
                 footerSocialIcon: [
                     {
                         id: 1,
-                        // title:url(..),
+                        img:'../assets/img/footer-facebook.png',
                         url:'#',
                     },
                     {
                         id: 2,
-                        title:'MAD Magazine',
+                        img:'../assets/img/footer-twitter.png',
                         url:'#',
                     },
                     {
                         id: 3,
-                        title:'DC Kids',
+                        mg:'../assets/img/footer-youtube.png',
                         url:'#',
                     },
                     {
                         id: 4,
-                        title:'DC Universe',
+                        mg:'../assets/img/footer-pinterest.png',
                         url:'#',
                     },
                     {
                         id: 5,
-                        title:'DC Power Visa',
+                        mg:'../assets/img/footer-periscope.png',
                         url:'#',
                     },
                 ],
@@ -186,7 +186,8 @@
 <footer>
     <section class="container">
         <nav>
-            <h2>dc comics</h2>
+            <div>
+                <h3>dc comics</h3>
             <ul>
                 <li v-for="link in footerLinks"  :key="link.id">
                     <a :href="link.url">
@@ -194,7 +195,7 @@
                     </a>
                 </li>
             </ul>
-            <h2>shop</h2>
+            <h3>shop</h3>
             <ul>
                 <li v-for="link in footerShop"  :key="link.id">
                     <a :href="link.url">
@@ -202,41 +203,48 @@
                     </a>
                 </li>>
             </ul>
-            <h2>dc</h2>
-            <ul>
-                <li v-for="link in footerTermOfUse"  :key="link.id">
-                    <a :href="link.url">
-                        {{ link.title }}
-                    </a>
-                </li>
-            </ul>
-            <h2>sites</h2>
-            <ul>
-                <li v-for="link in footerSites"  :key="link.id">
-                    <a :href="link.url">
-                        {{ link.title }}
-                    </a>
-                </li>
-            </ul>
+            </div>
+            <div>
+                <h3>dc</h3>
+                <ul>
+                    <li v-for="link in footerTermOfUse"  :key="link.id">
+                        <a :href="link.url">
+                            {{ link.title }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3>sites</h3>
+                <ul>
+                    <li v-for="link in footerSites"  :key="link.id">
+                        <a :href="link.url">
+                            {{ link.title }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
         <section class="img"> 
             <img src="../assets/img/dc-logo-bg.png" alt="dc-big-logo">
         </section>
         </section>
         <section class="social">
-            <section class="sing">
-                <button> sing-up now! </button>
-            </section>
-            <section class="follow">
-                <h2>follow us</h2>
-            <ul>
-                <li v-for="link in footerSocialIcon"  :key="link.id">
-                    <a :href="link.url">
-                        {{ link.title }}
-                    </a>
-                </li>
-            </ul>
-            </section>
+            <div>
+                <section class="sing">
+                    <button> sing-up now! </button>
+                </section>
+                <section class="follow">
+                    <h2>follow us</h2>
+                <ul>
+                    <li v-for="link in footerSocialIcon"  :key="link.id">
+                        <a :href="link.url">
+                            {{ link.title }}
+                        </a>
+                    </li>
+                </ul>
+                </section>
+            </div>
         </section>
 </footer>
 </template>
@@ -247,24 +255,42 @@
         background-image: url(../assets/img/footer-bg.jpg);
         .social{
             background-color: $dark-footer-bg;
-            .sing{
+            
+            div{
                 width: 1200px;
                 margin: 0 auto;
-            }
-            button{
-                color: white;
-                padding: 1rem;
-                background-color: $dark-footer-bg;
-                font-weight: bolder;
-                text-transform: uppercase;
-                border-color :$active-link-bg;
-                margin: 1rem 0rem;
+                display: flex;
+                .sing{
+                    width: 600px;
+                } 
+                button{
+                    color: white;
+                    padding: 1rem;
+                    background-color: $dark-footer-bg;
+                    font-weight: bolder;
+                    text-transform: uppercase;
+                    border-color :$active-link-bg;
+                    margin: 1rem 0rem;
+                }
+                section.follow{
+                width: 600px;
+                h2{
+                    color:$active-link-bg;
+                    margin-bottom: 0;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                ul{
+                    display: flex;
+                    list-style-type: none;
+                }
+                }
             }
         }
         .container{
             display: flex;
             width: 1200px;
-            height: 400px;
             margin: 0 auto;
             padding: 1rem;
         }
@@ -272,13 +298,14 @@
             width: 600px;
             display: flex;
             align-items: flex-start;
-            flex-direction: column;
             flex-wrap: wrap;
+            div{
+                margin-right: 1rem;
+            }
         ul{
             flex-direction: column;
             flex-wrap: wrap;
             list-style-type: none;
-            // margin-bottom: .2rem;
                 li{
                     font-size: .6rem;
                     padding: .3rem .0rem;
@@ -286,33 +313,23 @@
                 }
             }
         }
-        section.img{
-            width: 100%;
-            object-fit: cover;
-            display: flex;
-            justify-content: flex-end;
+        img{
+            overflow-y: hidden;
+            position: relative;
+            left: 110px;
+            bottom: 30px;
         }
         a{
             color:#858b8f;
             text-decoration: none;
         }
-        h2{
+        h3{
             color: white;
             text-transform: uppercase;
             margin-bottom: 1rem;
         }
-        section.follow{
-            h2{
-                color:$active-link-bg;
-            }
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            ul{
-                display: flex;
-                list-style-type: none;
-            }
-        }
+        
+        
     }
 
 </style>
