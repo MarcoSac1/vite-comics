@@ -29,4 +29,5 @@
 @use './style/partials/variable' as *;
 
 
+
 </style>
