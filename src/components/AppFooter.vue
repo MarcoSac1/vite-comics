@@ -153,109 +153,117 @@
                 footerSocialIcon: [
                     {
                         id: 1,
-                        img:'../assets/img/footer-facebook.png',
+                        img:'img/footer-facebook.png',
                         url:'#',
                     },
                     {
                         id: 2,
-                        img:'../assets/img/footer-twitter.png',
+                        img:'img/footer-twitter.png',
                         url:'#',
                     },
                     {
                         id: 3,
-                        mg:'../assets/img/footer-youtube.png',
+                        img:'img/footer-youtube.png',
                         url:'#',
                     },
                     {
                         id: 4,
-                        mg:'../assets/img/footer-pinterest.png',
+                        img:'img/footer-pinterest.png',
                         url:'#',
                     },
                     {
                         id: 5,
-                        mg:'../assets/img/footer-periscope.png',
+                        img:'img/footer-periscope.png',
                         url:'#',
                     },
                 ],
             }
-        }
+        },
+        methods:{
+            getImagePath: function(img) {
+            return new URL(`../assets/${img}`, import.meta.url).href;
+            }
+        },
     }
 </script>
 
 <template>
-<footer>
-    <section class="container">
-        <nav>
-            <div>
-                <h3>dc comics</h3>
-            <ul>
-                <li v-for="link in footerLinks"  :key="link.id">
-                    <a :href="link.url">
-                        {{ link.title }}
-                    </a>
-                </li>
-            </ul>
-            <h3>shop</h3>
-            <ul>
-                <li v-for="link in footerShop"  :key="link.id">
-                    <a :href="link.url">
-                        {{ link.title }}
-                    </a>
-                </li>>
-            </ul>
-            </div>
-            <div>
-                <h3>dc</h3>
+    <footer>
+        <section class="container">
+            <nav>
+                <div>
+                    <h3>dc comics</h3>
                 <ul>
-                    <li v-for="link in footerTermOfUse"  :key="link.id">
+                    <li v-for="link in footerLinks"  :key="link.id">
                         <a :href="link.url">
                             {{ link.title }}
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div>
-                <h3>sites</h3>
+                <h3>shop</h3>
                 <ul>
-                    <li v-for="link in footerSites"  :key="link.id">
+                    <li v-for="link in footerShop"  :key="link.id">
                         <a :href="link.url">
                             {{ link.title }}
                         </a>
-                    </li>
+                    </li>>
                 </ul>
-            </div>
-        </nav>
-        <section class="img"> 
-            <img src="../assets/img/dc-logo-bg.png" alt="dc-big-logo">
-        </section>
-        </section>
-        <section class="social">
-            <div>
-                <section class="sing">
-                    <button> sing-up now! </button>
-                </section>
-                <section class="follow">
-                    <h2>follow us</h2>
-                <ul>
-                    <li v-for="link in footerSocialIcon"  :key="link.id">
-                        <a :href="link.url">
-                            {{ link.title }}
-                        </a>
-                    </li>
-                </ul>
-                </section>
-            </div>
-        </section>
-</footer>
+                </div>
+                <div>
+                    <h3>dc</h3>
+                    <ul>
+                        <li v-for="link in footerTermOfUse"  :key="link.id">
+                            <a :href="link.url">
+                                {{ link.title }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>sites</h3>
+                    <ul>
+                        <li v-for="link in footerSites"  :key="link.id">
+                            <a :href="link.url">
+                                {{ link.title }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <section class="img"> 
+                <img src="../assets/img/dc-logo-bg.png" alt="dc-big-logo">
+            </section>
+            </section>
+            <section class="social">
+                <div>
+                    <section class="sing">
+                        <button> sing-up now! </button>
+                    </section>
+                    <section class="follow">
+                        <h2>follow us</h2>
+                    <ul>
+                        <li v-for="link in footerSocialIcon"  :key="link.id">
+                            <a :href="link.url">
+                                <img :src="getImagePath(link.img)" alt="">
+                                
+                            </a>
+                        </li>
+                    </ul>
+                    </section>
+                </div>
+            </section>
+    </footer>
 </template>
 
 <style lang="scss" scoped>
     @use '../style/partials/variable' as *;
     footer{
         background-image: url(../assets/img/footer-bg.jpg);
+        background-repeat:no-repeat;
+        background-size: cover;
+        
         .social{
             background-color: $dark-footer-bg;
-            
             div{
                 width: 1200px;
                 margin: 0 auto;
@@ -277,6 +285,7 @@
                 h2{
                     color:$active-link-bg;
                     margin-bottom: 0;
+                    text-transform: uppercase;
                 }
                 display: flex;
                 justify-content: center;
@@ -313,7 +322,7 @@
                 }
             }
         }
-        img{
+        section.img{
             overflow-y: hidden;
             position: relative;
             left: 110px;
@@ -322,6 +331,9 @@
         a{
             color:#858b8f;
             text-decoration: none;
+            img{
+                margin-left: .6rem;
+            }
         }
         h3{
             color: white;
