@@ -1,13 +1,13 @@
 <script>
     import ListProduct from './ListProduct.vue';
-    import jumbotronSection from './jumbotronSection.vue';
+    import JumbotronSection from './JumbotronSection.vue';
     export default{
         data(){
             
         },
         components:{
         ListProduct,
-        jumbotronSection
+        JumbotronSection
         }
     }
     
