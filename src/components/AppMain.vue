@@ -1,20 +1,27 @@
 <script>
-import listProducts from './listProduct.vue';
+    import ListProduct from './ListProduct.vue';
+    import jumbotronSection from './jumbotronSection.vue';
     export default{
         data(){
-            return{
-
-            }
+            
+        },
+        components:{
+        ListProduct,
+        jumbotronSection
         }
     }
+    
 </script>
 
 <template>
-<main>
-    <section class="text">
-        <p>--> Contents goes here <-- </p>
-    </section>
-</main>
+    <main>
+        <section>
+            <JumbotronSection/>
+        </section>
+        <section class="text">
+            <ListProduct/>
+        </section>
+    </main>
 </template>
 
 <style lang="scss" scoped>
@@ -29,6 +36,7 @@ import listProducts from './listProduct.vue';
         .text{
             width: 1200px;
             margin: 0 auto;
+            color: white;
         }
     }
 
