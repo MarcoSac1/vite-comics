@@ -124,7 +124,7 @@
                     padding: .5rem;
                     font-weight: 600;
                     text-transform: uppercase;
-                    &.active{
+                    &.active a{
                         color: $active-link-bg;
                         border-bottom: 4px  solid $active-link-bg;
                     }

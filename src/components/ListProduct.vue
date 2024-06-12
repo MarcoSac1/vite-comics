@@ -114,6 +114,8 @@ export default{
             text-align: center;
             img{
             width: 100%;
+            height: 218px;
+            object-fit: contain;
             }
         }
         button{

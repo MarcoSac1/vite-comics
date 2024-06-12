@@ -18,8 +18,11 @@ export default{
 @use '../style/partials/variable' as *;
 
     section.jumbo{
-        padding: 4rem;
-        
+        margin: 0 auto;
+        img{
+            height: 200px;
+
+        }
     }
     button{
         border: none;
